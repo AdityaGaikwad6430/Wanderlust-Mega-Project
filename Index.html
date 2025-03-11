@@ -26,47 +26,79 @@
             font-size: 18px;
             color: #444;
         }
-        .heart {
-            color: red;
-            font-size: 30px;
-        }
         .proposal {
             font-size: 24px;
             font-weight: bold;
             color: #d6336c;
             margin-top: 20px;
         }
-        .yes-button {
-            display: inline-block;
-            background-color: #d6336c;
-            color: white;
-            padding: 10px 20px;
+        .buttons {
             margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
             font-size: 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
+            margin: 10px;
+        }
+        .yes-button {
+            background-color: #d6336c;
+            color: white;
         }
         .yes-button:hover {
             background-color: #b02a5d;
         }
+        .no-button {
+            background-color: #888;
+            color: white;
+        }
+        .no-button:hover {
+            background-color: #666;
+        }
+        #noMessage {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #444;
+        }
     </style>
+    <script>
+        function sendEmail() {
+            let email = "adityagaikwad6430@gmail.com"; // Replace with your email
+            let subject = "Yes! I will marry you!";
+            let body = "I love you and I say YES to forever with you!";
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function showNoMessage() {
+            document.getElementById("noMessage").style.display = "block";
+        }
+    </script>
 </head>
 <body>
 
     <div class="letter">
-        <h1>My Love,</h1>
+        <h1>Dear</h1>
         <p>
-            From the moment I met you, my heart knew it had found its home.
+            From the moment I saw you, my heart knew it had found its home.
             Your presence fills my world with joy, your kindness touches my soul, and your love completes me in ways I never imagined.
         </p>
         <p>
             I want to spend every sunrise with you, every laughter-filled afternoon, and every peaceful night by your side.
             I want to be the reason behind your smile, your safe place, and your forever.
         </p>
-        <p class="proposal">Will you marry me?</p>
-        <a href="#" class="yes-button">Yes, I will! ❤️</a>
+        <p class="proposal">Will you be my future wife?</p>
+        
+        <div class="buttons">
+            <button class="button yes-button" onclick="sendEmail()">Yes, I will! ❤️</button>
+            <button class="button no-button" onclick="showNoMessage()">No... 😢</button>
+        </div>
+        
+        <p id="noMessage">No worries, my love for you remains the same! ❤️ But i will be professional only afterwards</p>
     </div>
 
 </body>
